@@ -1,0 +1,271 @@
+/* Deixa a página tomando a tela inteira */
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+}
+
+/* Seta o tipo de exibição para grid e adapta os código para os navegadores IE e Edge */
+.container {
+    height: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: 1fr;
+    grid-template-areas: "portfolio docs servicos comercial corporativo";
+}
+
+/* Determina o tamanho dos botões/imagens */
+.btn-img {
+    height: 25vh;
+    width: 65%;
+    margin: 0 auto;
+}
+
+/* Aumenta o tamanho do botão quando o mouse está em cima dele (em dispositivos móveis o tamanho é alerado quando clicado/tocado */
+.btn-img:hover, .btn-img:active {
+    transform: scale(1.1)
+}
+
+/* Determina os locais das divs em cada parte da grid, aplica a imagem de fundo e centraliza o conteúdo */
+.portfolio {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    display: flex;
+    align-items: center;
+    grid-area: portfolio;
+    background: url("images/bg-portfolio.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.docs {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+    display: flex;
+    align-items: center;
+    grid-area: docs;
+    background: url("images/bg-docs.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.servicos {
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+    display: flex;
+    align-items: center;
+    grid-area: servicos;
+    background: url("images/bg-servicos.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.comercial {
+    -ms-grid-column: 4;
+    -ms-grid-row: 1;
+    display: flex;
+    align-items: center;
+    grid-area: comercial;
+    background: url("images/bg-comercial.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.corporativo {
+    -ms-grid-column: 5;
+    -ms-grid-row: 1;
+    display: flex;
+    align-items: center;
+    grid-area: corporativo;
+    background: url("images/bg-corporativo.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Não exibe a div do configurador com telas acima de 992px */
+.configurador {
+    display: none;
+}
+
+/* Configura e adapta a página para telas com a largura máxima de 576px e na orientação retrato */
+@media only screen and (max-width: 576px) and (orientation: portrait) {
+    .container {
+        -ms-grid-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
+        -ms-grid-rows: 1fr 1fr 1fr;
+            grid-auto-rows: repeat(3, 1fr);
+        grid-template-areas: 
+            "portfolio           docs"
+            "servicos       comercial"
+            "corporativo configurador";
+    }
+
+    .btn-img {
+        height: 30vh;
+    }
+
+    .portfolio {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        grid-area: portfolio;
+    }
+    
+    .docs {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1;
+        grid-area: docs;
+    }
+    
+    .servicos {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+        grid-area: servicos;
+    }
+    
+    .comercial {
+        -ms-grid-column: 2;
+        -ms-grid-row: 2;
+        grid-area: comercial;
+    }
+    
+    .corporativo {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+        grid-area: corporativo;
+    }
+
+    .configurador {
+        -ms-grid-column: 2;
+        -ms-grid-row: 3;
+        display: flex;
+        align-items: center;
+        grid-area: configurador;
+        background: url("images/bg-configurador.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* Configura e adapta a página para telas com a largura entre 577px e 768px e na orientação retrato */
+@media only screen and (min-width: 577px) and (max-width: 768px) and (orientation: portrait) {
+    .container {
+        -ms-grid-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
+        -ms-grid-rows: 1fr 1fr 1fr;
+            grid-auto-rows: repeat(3, 1fr);
+        grid-template-areas: 
+            "portfolio           docs"
+            "servicos       comercial"
+            "corporativo configurador";
+    }
+
+    .btn-img {
+        height: 30vh;
+    }
+
+    .portfolio {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        grid-area: portfolio;
+    }
+    
+    .docs {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1;
+        grid-area: docs;
+    }
+    
+    .servicos {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+        grid-area: servicos;
+    }
+    
+    .comercial {
+        -ms-grid-column: 2;
+        -ms-grid-row: 2;
+        grid-area: comercial;
+    }
+    
+    .corporativo {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+        grid-area: corporativo;
+    }
+
+    .configurador {
+        -ms-grid-column: 2;
+        -ms-grid-row: 3;
+        display: flex;
+        align-items: center;
+        grid-area: configurador;
+        background: url("images/bg-configurador.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* Configura e adapta a página para telas com a largura máxima de 992px e na orientação paisagem */
+@media only screen and (max-width: 992px) and (orientation: landscape) {
+    .container {
+        height: 100vh;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
+        -ms-grid-rows: 1fr 1fr;
+            grid-auto-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "portfolio docs        servicos"
+            "comercial corporativo configurador";
+    }
+
+    .btn-img {
+        height: 30vh;
+    }
+
+    .portfolio {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        grid-area: portfolio;
+    }
+    
+    .docs {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1;
+        grid-area: docs;
+    }
+    
+    .servicos {
+        -ms-grid-column: 3;
+        -ms-grid-row: 1;
+        grid-area: servicos;
+    }
+    
+    .comercial {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+        grid-area: comercial;
+    }
+    
+    .corporativo {
+        -ms-grid-column: 2;
+        -ms-grid-row: 2;
+        grid-area: corporativo;
+    }
+
+    .configurador {
+        -ms-grid-column: 3;
+        -ms-grid-row: 2;
+        display: flex;
+        align-items: center;
+        grid-area: configurador;
+        background: url("images/bg-configurador.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+}
